@@ -17,18 +17,6 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      image: NFT,
-      title: "NFT React Project",
-      description: "This project serves as a frontend interface for an NFT marketplace.",
-      link: "https://yusufia99.github.io/NFT/",
-      icons: [
-        <FaReact key="react" className="text-blue-500 text-2xl" />,
-        <FaJs key="js" className="text-yellow-500 text-2xl" />,
-        <FaBootstrap key="bootstrap" className="text-purple-500 text-2xl" />
-      ],
-    },
-    {
-      id: 2,
       image: IOT,
       title: "IOT Project",
       description: "This project is focused on Internet of Things (IoT) technology.",
@@ -41,7 +29,7 @@ function Projects() {
       ],
     },
     {
-      id: 3,
+      id: 2,
       image: Travel,
       title: "Travel React Project",
       description: "This is travel app made using react and tailwindcss.",
@@ -50,6 +38,18 @@ function Projects() {
         <FaReact key="react" className="text-blue-500 text-2xl" />,
         <FaJs key="js" className="text-yellow-500 text-2xl" />,
         <SiTailwindcss key="tailwind" className="text-teal-500 text-2xl" />
+      ],
+    },
+    {
+      id: 3,
+      image: NFT,
+      title: "NFT React Project",
+      description: "This project serves as a frontend interface for an NFT marketplace.",
+      link: "https://yusufia99.github.io/NFT/",
+      icons: [
+        <FaReact key="react" className="text-blue-500 text-2xl" />,
+        <FaJs key="js" className="text-yellow-500 text-2xl" />,
+        <FaBootstrap key="bootstrap" className="text-purple-500 text-2xl" />
       ],
     },
   ];

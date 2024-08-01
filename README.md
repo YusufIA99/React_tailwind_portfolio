@@ -1,3 +1,11 @@
+# Portfolio Page
+Welcome to my portfolio page! This project showcases my work and skills using modern web development technologies including React, Vite, and TailwindCSS.
+
+## Live Demo
+
+Check out the live demo of the portfolio [here](https://yusufia99.github.io/React_tailwind_portfolio/).
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

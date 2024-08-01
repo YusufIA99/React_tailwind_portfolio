@@ -11,6 +11,12 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!name || !email || !message) {
+      alert("All fields are required.");
+      return;
+    }
+
     setLoader(true);
 
     try {

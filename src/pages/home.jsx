@@ -38,6 +38,7 @@ function Home() {
           <a href="https://github.com/YusufIA99" target="_blank" rel="noopener noreferrer">
             <img src={github} alt="GitHub" className="max-w-xs max-h-16 object-contain rounded-lg mb-4" />
           </a>
+          
           <h1 className='text-white text-3xl font-bold leading-none'>Yusuf Issa</h1>
         </div>
         <animated.div style={rightAnimationProps} className="hidden md:block row-span-1 col-span-1 md:col-start-3 md:row-start-4 bg-cyan-900 p-4 items-center justify-center rounded-lg w-full">

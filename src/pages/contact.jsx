@@ -44,7 +44,7 @@ function Contact() {
       transition={{ duration: 0.5, delay: 0.2 }}
       className="w-full min-h-screen flex flex-col items-center"
     >
-      <header className="text-white text-4xl font-bold my-8">
+      <header className="text-4xl font-bold my-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
         Contact Me
       </header>
       <div className="w-full max-w-screen-md p-8 bg-neutral-800 rounded-lg shadow-lg">

@@ -12,7 +12,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !email || !message) {
+    if (!name, !email, !message) {
       alert("All fields are required.");
       return;
     }
@@ -81,7 +81,7 @@ function Contact() {
             </label>
             <textarea
               id="message"
-              className="mt-1 p-2 w-full h-32 rounded-md bg-neutral-700 text-white border border-neutral-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 p-2 w-full h-32 rounded-md bg-neutral-700 text-white border border-neutral-600 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
               placeholder="Message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}

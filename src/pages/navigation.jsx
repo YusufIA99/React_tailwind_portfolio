@@ -1,23 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaLinkedin, FaSun, FaMoon } from 'react-icons/fa'; // Import GitHub, LinkedIn, Sun, and Moon icons
+import { FaLinkedin, FaSun, FaMoon } from 'react-icons/fa';
+import { useTheme } from './themecontext.jsx';
 
 function Navigation() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark-gradient');
-
-  useEffect(() => {
-    document.body.classList.remove('bg-gradient-to-r', 'from-gray-900', 'via-gray-800', 'to-black', 'bg-gradient-to-r', 'from-gray-200', 'via-gray-300', 'to-gray-400');
-    if (theme === 'dark-gradient') {
-      document.body.classList.add('bg-gradient-to-r', 'from-gray-900', 'via-gray-800', 'to-black');
-    } else {
-      document.body.classList.add('bg-gradient-to-r', 'from-gray-200', 'via-gray-300', 'to-gray-400');
-    }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark-gradient' ? 'light-gradient' : 'dark-gradient'));
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav className={`p-4 flex justify-center items-center relative ${theme === 'dark-gradient' ? 'bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-white'}`}>

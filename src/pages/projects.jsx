@@ -2,8 +2,9 @@ import React from 'react';
 import NFT from '../assets/NFT.png';
 import IOT from '../assets/IOT.png';
 import Travel from '../assets/travel.png';
-import { FaReact, FaJs, FaBootstrap, FaLink, FaPython } from 'react-icons/fa';
-import { SiFlask, SiTailwindcss } from 'react-icons/si';
+import Himmerland from '../assets/Himmerland.png'; // Import the new image
+import { FaReact, FaJs, FaBootstrap, FaLink, FaPython, FaJava } from 'react-icons/fa';
+import { SiFlask, SiTailwindcss, SiFirebase } from 'react-icons/si';
 import { useSpring, animated } from '@react-spring/web';
 
 function Projects() {
@@ -50,6 +51,17 @@ function Projects() {
         <FaReact key="react" className="text-blue-500 text-2xl" />,
         <FaJs key="js" className="text-yellow-500 text-2xl" />,
         <FaBootstrap key="bootstrap" className="text-purple-500 text-2xl" />
+      ],
+    },
+    {
+      id: 4,
+      image: Himmerland, // Use the new image
+      title: "Himmerland Boligforegning Community App",
+      description: "This project is a community app developed using Java and Firebase.",
+      link: "https://github.com/YusufIA99/Himmerland-app/tree/main", // Updated link
+      icons: [
+        <FaJava key="java" className="text-red-500 text-2xl" />,
+        <SiFirebase key="firebase" className="text-yellow-500 text-2xl" />
       ],
     },
   ];

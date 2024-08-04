@@ -7,7 +7,7 @@ function Navigation() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className={`p-4 flex justify-center items-center relative ${theme === 'dark-gradient' ? 'bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-white'}`}>
+    <nav className={`p-4 flex flex-col md:flex-row justify-center items-center relative ${theme === 'dark-gradient' ? 'bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white' : 'bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-white'}`}>
       <div className={`rounded-full px-1 py-2 flex items-center space-x-4 ${theme === 'dark-gradient' ? 'bg-gray-700' : 'bg-gray-500'}`}>
         <NavLink 
           to="/" 
@@ -28,7 +28,7 @@ function Navigation() {
           Contact
         </NavLink>
       </div>
-      <div className="absolute right-4 flex items-center space-x-4">
+      <div className="mt-4 md:mt-0 md:absolute md:right-4 flex items-center space-x-4">
         <button
           id="theme-toggle"
           onClick={toggleTheme}

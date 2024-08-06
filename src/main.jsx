@@ -12,7 +12,7 @@ import { ThemeProvider } from './pages/themecontext.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider>
-      <BrowserRouter basename="/React_tailwind_portfolio">
+      <BrowserRouter basename="/">
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />

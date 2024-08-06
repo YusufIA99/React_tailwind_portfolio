@@ -3,7 +3,7 @@ Welcome to my portfolio page! This project showcases my work and skills using mo
 
 ## Live Demo
 
-Check out the live demo of the portfolio [here](https://yusufia99.github.io/React_tailwind_portfolio/).
+Check out the live demo of the portfolio [here](https://yusufissa.com).
 
 
 # React + Vite

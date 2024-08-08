@@ -1,16 +1,23 @@
-import React from 'react';
-import NFT from '../assets/NFT.png';
-import IOT from '../assets/IOT.png';
-import Travel from '../assets/travel.png';
-import Himmerland from '../assets/Himmerland.png'; // Import the new image
-import { FaReact, FaJs, FaBootstrap, FaLink, FaPython, FaJava } from 'react-icons/fa';
-import { SiFlask, SiTailwindcss, SiFirebase } from 'react-icons/si';
-import { useSpring, animated } from '@react-spring/web';
+import React from "react";
+import NFT from "../assets/NFT.png";
+import IOT from "../assets/IOT.png";
+import Travel from "../assets/travel.png";
+import Himmerland from "../assets/Himmerland.png";
+import {
+  FaReact,
+  FaJs,
+  FaBootstrap,
+  FaLink,
+  FaPython,
+  FaJava,
+} from "react-icons/fa";
+import { SiFlask, SiTailwindcss, SiFirebase } from "react-icons/si";
+import { useSpring, animated } from "@react-spring/web";
 
 function Projects() {
   const fadeInProps = useSpring({
-    from: { opacity: 0, transform: 'translateY(20px)' },
-    to: { opacity: 1, transform: 'translateY(0)' },
+    from: { opacity: 0, transform: "translateY(20px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
     config: { tension: 170, friction: 40 },
     delay: 200,
   });
@@ -24,22 +31,43 @@ function Projects() {
         "This project is focused on Internet of Things (IoT) technology.",
       link: "https://github.com/YusufIA99/Smart-Curtain-IoT",
       icons: [
-        <FaReact key="react" className="text-2xl text-blue-500" />,
-        <FaBootstrap key="bootstrap" className="text-2xl text-purple-500" />,
-        <FaPython key="python" className="text-2xl text-green-500" />,
-        <SiFlask key="flask" className="text-2xl text-white" />,
+        <FaReact
+          key="react"
+          className="text-xl text-blue-500 md:text-lg lg:text-2xl"
+        />,
+        <FaBootstrap
+          key="bootstrap"
+          className="text-xl text-purple-500 md:text-lg lg:text-2xl"
+        />,
+        <FaPython
+          key="python"
+          className="text-xl text-green-500 md:text-lg lg:text-2xl"
+        />,
+        <SiFlask
+          key="flask"
+          className="text-xl text-white md:text-lg lg:text-2xl"
+        />,
       ],
     },
     {
       id: 2,
       image: Travel,
       title: "Travel React Project",
-      description: "This is travel app made using react and tailwindcss.",
+      description: "This is a travel app made using React and Tailwind CSS.",
       link: "https://yusufia99.github.io/travel-tailwind-vite/",
       icons: [
-        <FaReact key="react" className="text-2xl text-blue-500" />,
-        <FaJs key="js" className="text-2xl text-yellow-500" />,
-        <SiTailwindcss key="tailwind" className="text-2xl text-teal-500" />,
+        <FaReact
+          key="react"
+          className="text-xl text-blue-500 md:text-lg lg:text-2xl"
+        />,
+        <FaJs
+          key="js"
+          className="text-xl text-yellow-500 md:text-lg lg:text-2xl"
+        />,
+        <SiTailwindcss
+          key="tailwind"
+          className="text-xl text-teal-500 md:text-lg lg:text-2xl"
+        />,
       ],
     },
     {
@@ -50,45 +78,75 @@ function Projects() {
         "This project serves as a frontend interface for an NFT marketplace.",
       link: "https://yusufia99.github.io/NFT/",
       icons: [
-        <FaReact key="react" className="text-2xl text-blue-500" />,
-        <FaJs key="js" className="text-2xl text-yellow-500" />,
-        <FaBootstrap key="bootstrap" className="text-2xl text-purple-500" />,
+        <FaReact
+          key="react"
+          className="text-xl text-blue-500 md:text-lg lg:text-2xl"
+        />,
+        <FaJs
+          key="js"
+          className="text-xl text-yellow-500 md:text-lg lg:text-2xl"
+        />,
+        <FaBootstrap
+          key="bootstrap"
+          className="text-xl text-purple-500 md:text-lg lg:text-2xl"
+        />,
       ],
     },
     {
       id: 4,
-      image: Himmerland, // Use the new image
+      image: Himmerland,
       title: "Himmerland Boligforegning Community App",
       description:
         "This project is a community app developed using Java and Firebase.",
-      link: "https://github.com/YusufIA99/Himmerland-app/tree/main", // Updated link
+      link: "https://github.com/YusufIA99/Himmerland-app/tree/main",
       icons: [
-        <FaJava key="java" className="text-2xl text-red-500" />,
-        <SiFirebase key="firebase" className="text-2xl text-yellow-500" />,
+        <FaJava
+          key="java"
+          className="text-xl text-red-500 md:text-lg lg:text-2xl"
+        />,
+        <SiFirebase
+          key="firebase"
+          className="text-xl text-yellow-500 md:text-lg lg:text-2xl"
+        />,
       ],
     },
   ];
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center">
-      <header className="text-4xl font-bold my-8 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+    <div className="flex min-h-screen w-full flex-col items-center">
+      <header className="my-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
         See My Work
       </header>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-screen-lg p-8">
+      <div className="grid w-full max-w-screen-lg grid-cols-1 gap-6 p-6 md:grid-cols-2 md:gap-8 md:p-8">
         {projects.map((project) => (
-          <animated.div key={project.id} style={fadeInProps} className="relative group bg-neutral-800 rounded-lg overflow-hidden">
-            <img src={project.image} alt={project.title} className="w-full h-80 object-cover transition-transform duration-300 transform group-hover:scale-110" />
-            <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
-              <h1 className="text-white text-3xl font-bold leading-none">{project.title}</h1>
-              <p className="text-gray-300 text-lg mt-2 text-center">
+          <animated.div
+            key={project.id}
+            style={fadeInProps}
+            className="group relative overflow-hidden rounded-lg bg-neutral-800"
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-110 md:h-56 lg:h-80"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <h1 className="text-2xl font-bold leading-none text-white md:text-xl lg:text-3xl">
+                {project.title}
+              </h1>
+              <p className="mt-2 text-center text-base text-gray-300 md:text-sm lg:text-lg">
                 {project.description}
               </p>
-              <div className="mt-4 flex space-x-4 justify-center">
+              <div className="mt-4 flex justify-center space-x-2 md:space-x-4">
                 {project.icons.map((icon, index) => (
                   <span key={index}>{icon}</span>
                 ))}
               </div>
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-4 text-white text-2xl">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 text-xl text-white md:text-lg lg:text-2xl"
+              >
                 <FaLink />
               </a>
             </div>

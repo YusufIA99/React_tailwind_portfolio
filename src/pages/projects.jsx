@@ -20,13 +20,14 @@ function Projects() {
       id: 1,
       image: IOT,
       title: "IOT Project",
-      description: "This project is focused on Internet of Things (IoT) technology.",
+      description:
+        "This project is focused on Internet of Things (IoT) technology.",
       link: "https://github.com/YusufIA99/Smart-Curtain-IoT",
       icons: [
-        <FaReact key="react" className="text-blue-500 text-2xl" />,
-        <FaBootstrap key="bootstrap" className="text-purple-500 text-2xl" />,
-        <FaPython key="python" className="text-green-500 text-2xl" />,
-        <SiFlask key="flask" className="text-white text-2xl" />
+        <FaReact key="react" className="text-2xl text-blue-500" />,
+        <FaBootstrap key="bootstrap" className="text-2xl text-purple-500" />,
+        <FaPython key="python" className="text-2xl text-green-500" />,
+        <SiFlask key="flask" className="text-2xl text-white" />,
       ],
     },
     {
@@ -34,34 +35,36 @@ function Projects() {
       image: Travel,
       title: "Travel React Project",
       description: "This is travel app made using react and tailwindcss.",
-      link: "https://github.com/YusufIA99/travel-tailwind-vite",
+      link: "https://yusufia99.github.io/travel-tailwind-vite/",
       icons: [
-        <FaReact key="react" className="text-blue-500 text-2xl" />,
-        <FaJs key="js" className="text-yellow-500 text-2xl" />,
-        <SiTailwindcss key="tailwind" className="text-teal-500 text-2xl" />
+        <FaReact key="react" className="text-2xl text-blue-500" />,
+        <FaJs key="js" className="text-2xl text-yellow-500" />,
+        <SiTailwindcss key="tailwind" className="text-2xl text-teal-500" />,
       ],
     },
     {
       id: 3,
       image: NFT,
       title: "NFT React Project",
-      description: "This project serves as a frontend interface for an NFT marketplace.",
+      description:
+        "This project serves as a frontend interface for an NFT marketplace.",
       link: "https://yusufia99.github.io/NFT/",
       icons: [
-        <FaReact key="react" className="text-blue-500 text-2xl" />,
-        <FaJs key="js" className="text-yellow-500 text-2xl" />,
-        <FaBootstrap key="bootstrap" className="text-purple-500 text-2xl" />
+        <FaReact key="react" className="text-2xl text-blue-500" />,
+        <FaJs key="js" className="text-2xl text-yellow-500" />,
+        <FaBootstrap key="bootstrap" className="text-2xl text-purple-500" />,
       ],
     },
     {
       id: 4,
       image: Himmerland, // Use the new image
       title: "Himmerland Boligforegning Community App",
-      description: "This project is a community app developed using Java and Firebase.",
+      description:
+        "This project is a community app developed using Java and Firebase.",
       link: "https://github.com/YusufIA99/Himmerland-app/tree/main", // Updated link
       icons: [
-        <FaJava key="java" className="text-red-500 text-2xl" />,
-        <SiFirebase key="firebase" className="text-yellow-500 text-2xl" />
+        <FaJava key="java" className="text-2xl text-red-500" />,
+        <SiFirebase key="firebase" className="text-2xl text-yellow-500" />,
       ],
     },
   ];

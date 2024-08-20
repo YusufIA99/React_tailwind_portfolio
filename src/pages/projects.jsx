@@ -1,5 +1,4 @@
 import React from "react";
-import NFT from "../assets/NFT.png";
 import IOT from "../assets/IOT.png";
 import Travel from "../assets/travel.png";
 import Himmerland from "../assets/Himmerland.png";
@@ -49,6 +48,26 @@ function Projects() {
         />,
       ],
     },
+
+    {
+      id: 3,
+      image: Himmerland,
+      title: "Himmerland Boligforegning Community App",
+      description:
+        "This project is a community app developed using Java and Firebase.",
+      link: "https://github.com/YusufIA99/Himmerland-app/tree/main",
+      icons: [
+        <FaJava
+          key="java"
+          className="text-xl text-red-500 md:text-lg lg:text-2xl"
+        />,
+        <SiFirebase
+          key="firebase"
+          className="text-xl text-yellow-500 md:text-lg lg:text-2xl"
+        />,
+      ],
+    },
+    
     {
       id: 2,
       image: Travel,
@@ -67,46 +86,6 @@ function Projects() {
         <SiTailwindcss
           key="tailwind"
           className="text-xl text-teal-500 md:text-lg lg:text-2xl"
-        />,
-      ],
-    },
-    {
-      id: 3,
-      image: NFT,
-      title: "NFT React Project",
-      description:
-        "This project serves as a frontend interface for an NFT marketplace.",
-      link: "https://yusufia99.github.io/NFT/",
-      icons: [
-        <FaReact
-          key="react"
-          className="text-xl text-blue-500 md:text-lg lg:text-2xl"
-        />,
-        <FaJs
-          key="js"
-          className="text-xl text-yellow-500 md:text-lg lg:text-2xl"
-        />,
-        <FaBootstrap
-          key="bootstrap"
-          className="text-xl text-purple-500 md:text-lg lg:text-2xl"
-        />,
-      ],
-    },
-    {
-      id: 4,
-      image: Himmerland,
-      title: "Himmerland Boligforegning Community App",
-      description:
-        "This project is a community app developed using Java and Firebase.",
-      link: "https://github.com/YusufIA99/Himmerland-app/tree/main",
-      icons: [
-        <FaJava
-          key="java"
-          className="text-xl text-red-500 md:text-lg lg:text-2xl"
-        />,
-        <SiFirebase
-          key="firebase"
-          className="text-xl text-yellow-500 md:text-lg lg:text-2xl"
         />,
       ],
     },

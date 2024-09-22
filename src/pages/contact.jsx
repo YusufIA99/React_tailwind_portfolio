@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
+import emailjs from "emailjs-com";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -20,13 +21,29 @@ function Contact() {
     setLoader(true);
 
     try {
+      // Save to Firestore
       await addDoc(collection(db, "contacts"), {
         name: name,
         email: email,
         message: message,
       });
+
+      // Send email using EmailJS
+      const templateParams = {
+        name: name,
+        email: email,
+        message: message,
+      };
+
+      await emailjs.send(
+        "service_nqq3mwo",
+        "template_yo9n685",
+        templateParams,
+        "DMfqNbl0llDnCuwyQ"
+      );
+
       setLoader(false);
-      alert("Your message has been submitted 👍");
+      alert("Your message has been submitted and email sent 👍");
     } catch (error) {
       setLoader(false);
       alert(error.message);

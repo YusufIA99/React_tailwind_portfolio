@@ -1,6 +1,6 @@
 import React from "react";
 import github from "../assets/github.png";
-import stars from "../assets/stars.png";
+import Yusuf from "../assets/Yusuf.png";
 import {
   FaReact,
   FaJs,
@@ -38,9 +38,7 @@ function Home() {
       ? "bg-neutral-800"
       : "bg-white";
   const textColor =
-    theme === "dark" || theme === "dark-gradient"
-      ? "text-white"
-      : "text-black";
+    theme === "dark" || theme === "dark-gradient" ? "text-white" : "text-black";
   const textSecondaryColor =
     theme === "dark" || theme === "dark-gradient"
       ? "text-gray-400"
@@ -65,10 +63,10 @@ function Home() {
           <p
             className={`mt-2 text-lg md:text-base lg:text-lg ${textSecondaryColor}`}
           >
-            Hey! My name is Yusuf. I am a software developer and currently a
-            student at Aalborg University. I am passionate about creating
-            innovative software solutions and am always seeking new challenges.
-            If my profile interests you, please feel free to{" "}
+            Hi, I'm Yusuf! I’m a frontend developer currently studying at
+            Aalborg University. I am passionate about creating innovative
+            software solutions that enhance user experiences. If my profile
+            interests you, please feel free to{" "}
             <a
               href="mailto:yusuia0154@gmail.com"
               className={`text-blue-500 underline`}
@@ -80,13 +78,15 @@ function Home() {
         </animated.div>
         <animated.div
           style={rightAnimationProps}
-          className={`col-span-1 row-span-3 flex hidden h-full w-full items-center justify-center overflow-hidden rounded-lg md:col-start-3 md:block ${bgColor}`}
+          className={`col-span-1 row-span-4 flex hidden h-full w-full items-center justify-center overflow-hidden rounded-lg md:col-start-3 md:block ${bgColor}`}
         >
-          <img
-            src={stars}
-            alt="Stars"
-            className="h-full w-full object-cover md:h-3/4 md:w-3/4 lg:h-full lg:w-full"
-          />
+          <div className="relative h-full w-full">
+            <img
+              src={Yusuf}
+              alt="Yusuf"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
         </animated.div>
 
         <div
@@ -110,15 +110,6 @@ function Home() {
           </h1>
         </div>
         <animated.div
-          style={rightAnimationProps}
-          className={`col-span-1 row-span-1 hidden w-full items-center justify-center rounded-lg ${accentColor} p-4 md:col-start-3 md:row-start-4 md:block`}
-        >
-          <p className="text-center text-base text-white md:text-lg lg:text-xl">
-            "Design is not just what it looks like and feels like. Design is how
-            it works."
-          </p>
-        </animated.div>
-        <animated.div
           style={leftAnimationProps}
           className={`col-span-1 row-span-4 flex w-full flex-col items-start justify-start rounded-lg p-4 md:col-span-2 md:col-start-2 md:row-start-5 ${bgColor}`}
         >
@@ -138,11 +129,8 @@ function Home() {
               </h3>
               <p>Aalborg University - 2024 to present</p>
               <p>
-                In this program, I will gain expertise in digital innovation
-                with a strong focus on user-centered design. I will develop,
-                design, and evaluate interactive technologies, staying at the
-                forefront of the latest trends to create great digital
-                experiences.
+                In this program, I am gaining expertise in interactive
+                technology with an emphasis on user-centered design.
               </p>
             </li>
             <li className="mb-2">
@@ -151,10 +139,11 @@ function Home() {
               >
                 Bachelor in Information Technology
               </h3>
-              <p>Aalborg University - 2020 to 2024</p>
+              <p>Aalborg University - 2020 to 2023</p>
               <p>
                 Designed and developed various systems, focusing on usability
-                and user experience.
+                and user experience. During my bachelor’s program, I specialized
+                in the technical direction, focusing on software development.
               </p>
             </li>
           </ul>
@@ -165,7 +154,7 @@ function Home() {
         >
           <h1 className="text-center text-3xl font-bold leading-none text-white md:text-2xl lg:text-3xl">
             Student & <br />
-            Software Developer
+            Frontend Developer
           </h1>
         </animated.div>
         <animated.div
@@ -182,9 +171,6 @@ function Home() {
           >
             <li className="mb-2 flex items-center">
               <FaJs className="mr-2 text-yellow-500" /> JavaScript
-            </li>
-            <li className="mb-2 flex items-center">
-              <FaPython className="mr-2 text-blue-400" /> Python
             </li>
             <li className="mb-2 flex items-center">
               <FaReact className="mr-2 text-blue-500" /> React

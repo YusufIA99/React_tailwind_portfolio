@@ -2,6 +2,7 @@ import React from "react";
 import IOT from "../assets/IOT.png";
 import Travel from "../assets/travel.png";
 import Himmerland from "../assets/Himmerland.png";
+import Fraizer from "../assets/fraizer.png"; // Add the image for Fraizer
 import {
   FaReact,
   FaJs,
@@ -9,8 +10,10 @@ import {
   FaLink,
   FaPython,
   FaJava,
+  FaCss3Alt,
+  FaHtml5,
 } from "react-icons/fa";
-import { SiFlask, SiTailwindcss, SiFirebase } from "react-icons/si";
+import { SiFlask, SiTailwindcss, SiFirebase, SiShopify } from "react-icons/si";
 import { useSpring, animated } from "@react-spring/web";
 
 function Projects() {
@@ -24,33 +27,28 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      image: IOT,
-      title: "IOT Project",
+      image: Fraizer,
+      title: "Fraizer Webshop",
       description:
-        "This project is focused on Internet of Things (IoT) technology.",
-      link: "https://github.com/YusufIA99/Smart-Curtain-IoT",
+        "Fraizer is a Danish fashion brand founded in 2023, focused on high-quality, affordable fashion with a timeless Scandinavian style. I worked on the webshop, implementing custom features and designs using Shopify and CSS.",
+      link: "https://fraizer.dk", // Replace with the actual link
       icons: [
-        <FaReact
-          key="react"
-          className="text-xl text-blue-500 md:text-lg lg:text-2xl"
-        />,
-        <FaBootstrap
-          key="bootstrap"
-          className="text-xl text-purple-500 md:text-lg lg:text-2xl"
-        />,
-        <FaPython
-          key="python"
+        <SiShopify
+          key="shopify"
           className="text-xl text-green-500 md:text-lg lg:text-2xl"
         />,
-        <SiFlask
-          key="flask"
-          className="text-xl text-white md:text-lg lg:text-2xl"
+        <FaCss3Alt
+          key="css"
+          className="text-xl text-blue-600 md:text-lg lg:text-2xl"
+        />,
+        <FaHtml5
+          key="html"
+          className="text-xl text-orange-500 md:text-lg lg:text-2xl"
         />,
       ],
     },
-
     {
-      id: 3,
+      id: 2,
       image: Himmerland,
       title: "Himmerland Boligforegning Community App",
       description:
@@ -67,9 +65,35 @@ function Projects() {
         />,
       ],
     },
-    
     {
-      id: 2,
+      id: 3,
+      image: IOT,
+      title: "IOT Project",
+      description:
+        "This project is focused on Internet of Things (IoT) technology.",
+      link: "https://github.com/YusufIA99/Smart-Curtain-IoT",
+      icons: [
+        <FaReact
+          key="react"
+          className="text-xl text-blue-500 md:text-lg lg:text-2xl"
+        />,
+        <FaBootstrap
+          key="bootstrap"
+          className="text-xl text-purple-500 md:text-lg lg:text-2xl"
+        />,
+        <FaPython
+          key="python"
+          className="text-xl md:text-lg lg:text-2xl"
+          style={{ color: "#3776AB" }} // Set the color explicitly
+        />,
+        <SiFlask
+          key="flask"
+          className="text-xl text-white md:text-lg lg:text-2xl"
+        />,
+      ],
+    },
+    {
+      id: 4,
       image: Travel,
       title: "Travel React Project",
       description: "This is a travel app made using React and Tailwind CSS.",

@@ -1,6 +1,6 @@
 import React from "react";
 import github from "../assets/github.png";
-import Yusuf from "../assets/Yusuf.png";
+import YusufIMG from "../assets/YusufIMG.png";
 import {
   FaReact,
   FaJs,
@@ -82,7 +82,7 @@ function Home() {
         >
           <div className="relative h-full w-full">
             <img
-              src={Yusuf}
+              src={YusufIMG}
               alt="Yusuf"
               className="absolute inset-0 h-full w-full object-cover"
             />

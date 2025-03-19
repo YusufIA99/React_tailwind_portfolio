@@ -5,6 +5,7 @@ import Himmerland from "../assets/Himmerland.png";
 import Fraizer from "../assets/fraizer.png"; // Add the image for Fraizer
 import Portfolio from "../assets/Portfolio.pdf"; // Import the PDF file
 import ExploreAalborg from "../assets/ExploreAalborg.png"; // Add the image for Explore Aalborg
+import Progress from "../assets/progress.png"; // Add the image for the progress project
 import {
   FaReact,
   FaJs,
@@ -14,9 +15,18 @@ import {
   FaJava,
   FaCss3Alt,
   FaHtml5,
-  FaUnity, 
+  FaUnity,
 } from "react-icons/fa";
-import { SiFlask, SiTailwindcss, SiFirebase, SiShopify, SiFigma, SiCsharp } from "react-icons/si";
+import {
+  SiFlask,
+  SiTailwindcss,
+  SiFirebase,
+  SiShopify,
+  SiFigma,
+  SiCsharp,
+  SiTypescript,
+  SiExpo,
+} from "react-icons/si";
 import { useSpring, animated } from "@react-spring/web";
 
 function Projects() {
@@ -27,118 +37,144 @@ function Projects() {
     delay: 200,
   });
 
-   const projects = [
-     {
-       id: 1,
-       image: ExploreAalborg,
-       title: "IXD 7 Projects",
-       description:
-         "This project contains a downloadable presentation of 2 mini-projects and 1 bigger project I was part of during my 7th semester in Interaction Design.",
-       link: Portfolio,
-       icons: [
-         <FaUnity
-           key="unity"
-           className="text-xl text-gray-500 md:text-lg lg:text-2xl"
-         />,
-         <SiFigma
-           key="figma"
-           className="text-xl text-pink-500 md:text-lg lg:text-2xl"
-         />,
-         <SiCsharp
-           key="csharp"
-           className="text-xl text-purple-500 md:text-lg lg:text-2xl"
-         />,
-       ],
-     },
-     {
-       id: 2,
-       image: Fraizer,
-       title: "Fraizer Webshop",
-       description:
-         "Fraizer is a Danish fashion brand founded in 2023, focused on high-quality, affordable fashion with a timeless Scandinavian style. I worked on the webshop, implementing custom features and designs using Shopify and CSS.",
-       link: "https://fraizer.dk", // Replace with the actual link
-       icons: [
-         <SiShopify
-           key="shopify"
-           className="text-xl text-green-500 md:text-lg lg:text-2xl"
-         />,
-         <FaCss3Alt
-           key="css"
-           className="text-xl text-blue-600 md:text-lg lg:text-2xl"
-         />,
-         <FaHtml5
-           key="html"
-           className="text-xl text-orange-500 md:text-lg lg:text-2xl"
-         />,
-       ],
-     },
-     {
-       id: 3,
-       image: Himmerland,
-       title: "Himmerland Boligforegning Community App",
-       description:
-         "This project is a community app developed using Java and Firebase.",
-       link: "https://github.com/YusufIA99/Himmerland-app/tree/main",
-       icons: [
-         <FaJava
-           key="java"
-           className="text-xl text-red-500 md:text-lg lg:text-2xl"
-         />,
-         <SiFirebase
-           key="firebase"
-           className="text-xl text-yellow-500 md:text-lg lg:text-2xl"
-         />,
-       ],
-     },
-     {
-       id: 4,
-       image: IOT,
-       title: "IOT Project",
-       description:
-         "This project is focused on Internet of Things (IoT) technology.",
-       link: "https://github.com/YusufIA99/Smart-Curtain-IoT",
-       icons: [
-         <FaReact
-           key="react"
-           className="text-xl text-blue-500 md:text-lg lg:text-2xl"
-         />,
-         <FaBootstrap
-           key="bootstrap"
-           className="text-xl text-purple-500 md:text-lg lg:text-2xl"
-         />,
-         <FaPython
-           key="python"
-           className="text-xl md:text-lg lg:text-2xl"
-           style={{ color: "#3776AB" }} // Set the color explicitly
-         />,
-         <SiFlask
-           key="flask"
-           className="text-xl text-white md:text-lg lg:text-2xl"
-         />,
-       ],
-     },
-     {
-       id: 5,
-       image: Travel,
-       title: "Travel React Project",
-       description: "This is a travel app made using React and Tailwind CSS.",
-       link: "https://yusufia99.github.io/travel-tailwind-vite/",
-       icons: [
-         <FaReact
-           key="react"
-           className="text-xl text-blue-500 md:text-lg lg:text-2xl"
-         />,
-         <FaJs
-           key="js"
-           className="text-xl text-yellow-500 md:text-lg lg:text-2xl"
-         />,
-         <SiTailwindcss
-           key="tailwind"
-           className="text-xl text-teal-500 md:text-lg lg:text-2xl"
-         />,
-       ],
-     },
-   ];
+  const projects = [
+    {
+      id: 1,
+      image: Progress,
+      title: "Still in Progress",
+      description:
+        "This application is developed as a research project with three distinct tasks. Built using React Native, TypeScript, Expo, and CSS, it aims to study how Situationally-Induced Impairments and Disabilities (SIID) and pain affect mobile interaction.",
+      link: "https://github.com/leongroth/PainPhones",
+      icons: [
+        <FaReact
+          key="react-native"
+          className="text-xl text-blue-500 md:text-lg lg:text-2xl"
+        />,
+        <SiTypescript
+          key="typescript"
+          className="text-xl text-blue-500 md:text-lg lg:text-2xl"
+        />,
+        <SiExpo
+          key="expo"
+          className="text-xl text-black md:text-lg lg:text-2xl"
+        />,
+        <FaCss3Alt
+          key="css"
+          className="text-xl text-blue-600 md:text-lg lg:text-2xl"
+        />,
+      ],
+    },
+    {
+      id: 2,
+      image: ExploreAalborg,
+      title: "IXD 7 Projects",
+      description:
+        "This project contains a downloadable presentation of 2 mini-projects and 1 bigger project I was part of during my 7th semester in Interaction Design.",
+      link: Portfolio,
+      icons: [
+        <FaUnity
+          key="unity"
+          className="text-xl text-gray-500 md:text-lg lg:text-2xl"
+        />,
+        <SiFigma
+          key="figma"
+          className="text-xl text-pink-500 md:text-lg lg:text-2xl"
+        />,
+        <SiCsharp
+          key="csharp"
+          className="text-xl text-purple-500 md:text-lg lg:text-2xl"
+        />,
+      ],
+    },
+    {
+      id: 3,
+      image: Fraizer,
+      title: "Fraizer Webshop",
+      description:
+        "Fraizer is a Danish fashion brand founded in 2023, focused on high-quality, affordable fashion with a timeless Scandinavian style. I worked on the webshop, implementing custom features and designs using Shopify and CSS.",
+      link: "https://fraizer.dk", // Replace with the actual link
+      icons: [
+        <SiShopify
+          key="shopify"
+          className="text-xl text-green-500 md:text-lg lg:text-2xl"
+        />,
+        <FaCss3Alt
+          key="css"
+          className="text-xl text-blue-600 md:text-lg lg:text-2xl"
+        />,
+        <FaHtml5
+          key="html"
+          className="text-xl text-orange-500 md:text-lg lg:text-2xl"
+        />,
+      ],
+    },
+    {
+      id: 4,
+      image: Himmerland,
+      title: "Himmerland Boligforegning Community App",
+      description:
+        "This project is a community app developed using Java and Firebase.",
+      link: "https://github.com/YusufIA99/Himmerland-app/tree/main",
+      icons: [
+        <FaJava
+          key="java"
+          className="text-xl text-red-500 md:text-lg lg:text-2xl"
+        />,
+        <SiFirebase
+          key="firebase"
+          className="text-xl text-yellow-500 md:text-lg lg:text-2xl"
+        />,
+      ],
+    },
+    {
+      id: 5,
+      image: IOT,
+      title: "IOT Project",
+      description:
+        "This project is focused on Internet of Things (IoT) technology.",
+      link: "https://github.com/YusufIA99/Smart-Curtain-IoT",
+      icons: [
+        <FaReact
+          key="react"
+          className="text-xl text-blue-500 md:text-lg lg:text-2xl"
+        />,
+        <FaBootstrap
+          key="bootstrap"
+          className="text-xl text-purple-500 md:text-lg lg:text-2xl"
+        />,
+        <FaPython
+          key="python"
+          className="text-xl md:text-lg lg:text-2xl"
+          style={{ color: "#3776AB" }} // Set the color explicitly
+        />,
+        <SiFlask
+          key="flask"
+          className="text-xl text-white md:text-lg lg:text-2xl"
+        />,
+      ],
+    },
+    {
+      id: 6,
+      image: Travel,
+      title: "Travel React Project",
+      description: "This is a travel app made using React and Tailwind CSS.",
+      link: "https://yusufia99.github.io/travel-tailwind-vite/",
+      icons: [
+        <FaReact
+          key="react"
+          className="text-xl text-blue-500 md:text-lg lg:text-2xl"
+        />,
+        <FaJs
+          key="js"
+          className="text-xl text-yellow-500 md:text-lg lg:text-2xl"
+        />,
+        <SiTailwindcss
+          key="tailwind"
+          className="text-xl text-teal-500 md:text-lg lg:text-2xl"
+        />,
+      ],
+    },
+  ];
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center">

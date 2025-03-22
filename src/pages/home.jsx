@@ -153,8 +153,8 @@ function Home() {
           className={`col-span-1 row-span-1 flex w-full flex-col items-center justify-center rounded-lg ${accentColor} p-4 md:col-start-1 md:row-start-3`}
         >
           <h1 className="text-center text-3xl font-bold leading-none text-white md:text-2xl lg:text-3xl">
-            Student & <br />
-            Frontend Developer
+            Student<br />
+           @Aalborg University
           </h1>
         </animated.div>
         <animated.div

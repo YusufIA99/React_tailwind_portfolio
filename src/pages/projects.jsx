@@ -6,6 +6,7 @@ import Fraizer from "../assets/fraizer.png"; // Add the image for Fraizer
 import Portfolio from "../assets/Portfolio.pdf"; // Import the PDF file
 import ExploreAalborg from "../assets/ExploreAalborg.png"; // Add the image for Explore Aalborg
 import Progress from "../assets/progress.png"; // Add the image for the progress project
+import Siid from "../assets/SIID.png"; // Add the image for the SIID project
 import {
   FaReact,
   FaJs,
@@ -40,10 +41,10 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      image: Progress,
-      title: "Still in Progress",
+      image: Siid,
+      title: "IXD 8 Project",
       description:
-        "This application is developed as a research project with three distinct tasks. Built using React Native, TypeScript, Expo, and CSS, it aims to study how Situationally-Induced Impairments and Disabilities (SIID) and pain affect mobile interaction.",
+        "This application is developed as a research project with three distinct tasks. Built using React Native, TypeScript, Expo, and CSS, it aims to study how the Situationally-Induced Impairments and Disabilities (SIID) pain affect mobile interaction.",
       link: "https://github.com/leongroth/PainPhones",
       icons: [
         <FaReact

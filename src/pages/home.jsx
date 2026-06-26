@@ -1,6 +1,6 @@
 import React from "react";
 import github from "../assets/github.png";
-import YusufIMG from "../assets/YusufIMG.png";
+import YusufIMG from "../assets/YusufIMG.webp";
 import {
   FaReact,
   FaJs,
@@ -14,39 +14,60 @@ import {
 } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 import { useSpring, animated } from "@react-spring/web";
-import { useTheme } from "./themecontext.jsx";
+import { useTheme, THEMES } from "../context/theme.js";
+import { SPRING_CONFIG } from "../utils/animation.js";
+
+const CONTACT_EMAIL = "yusuia0154@gmail.com";
+
+const EDUCATION = [
+  {
+    title: "Master in Interaction Design",
+    period: "Aalborg University - 2024 to present",
+    description:
+      "In this program, I am gaining expertise in interactive technology with an emphasis on user-centered design.",
+  },
+  {
+    title: "Bachelor in Information Technology",
+    period: "Aalborg University - 2020 to 2023",
+    description:
+      "Designed and developed various systems, focusing on usability and user experience. During my bachelor’s program, I specialized in the technical direction, focusing on software development.",
+  },
+];
+
+const TECHNOLOGIES = [
+  { Icon: FaJs, color: "text-yellow-500", label: "JavaScript" },
+  { Icon: FaReact, color: "text-blue-500", label: "React" },
+  { Icon: FaHtml5, color: "text-orange-500", label: "HTML" },
+  { Icon: FaCss3Alt, color: "text-blue-600", label: "CSS" },
+  { Icon: SiTailwindcss, color: "text-teal-500", label: "TailwindCSS" },
+  { Icon: FaBootstrap, color: "text-purple-600", label: "Bootstrap" },
+  { Icon: FaGit, color: "text-red-500", label: "Git" },
+  { Icon: FaGithub, color: "text-gray-500", label: "GitHub" },
+  { Icon: FaFigma, color: "text-pink-500", label: "Figma" },
+];
 
 function Home() {
   const { theme } = useTheme();
+  const isDark = theme === THEMES.DARK;
 
   const leftAnimationProps = useSpring({
     from: { opacity: 0, transform: "translateX(-100px)" },
     to: { opacity: 1, transform: "translateX(0)" },
-    config: { tension: 170, friction: 40 },
+    config: SPRING_CONFIG,
     delay: 200,
   });
 
   const rightAnimationProps = useSpring({
     from: { opacity: 0, transform: "translateX(100px)" },
     to: { opacity: 1, transform: "translateX(0)" },
-    config: { tension: 170, friction: 40 },
+    config: SPRING_CONFIG,
     delay: 200,
   });
 
-  const bgColor =
-    theme === "dark" || theme === "dark-gradient"
-      ? "bg-neutral-800"
-      : "bg-white";
-  const textColor =
-    theme === "dark" || theme === "dark-gradient" ? "text-white" : "text-black";
-  const textSecondaryColor =
-    theme === "dark" || theme === "dark-gradient"
-      ? "text-gray-400"
-      : "text-gray-700";
-  const accentColor =
-    theme === "dark" || theme === "dark-gradient"
-      ? "bg-cyan-900"
-      : "bg-blue-400";
+  const bgColor = isDark ? "bg-neutral-800" : "bg-white";
+  const textColor = isDark ? "text-white" : "text-black";
+  const textSecondaryColor = isDark ? "text-gray-400" : "text-gray-700";
+  const accentColor = isDark ? "bg-cyan-900" : "bg-blue-400";
 
   return (
     <div className="flex h-screen w-full justify-center">
@@ -63,13 +84,13 @@ function Home() {
           <p
             className={`mt-2 text-lg md:text-base lg:text-lg ${textSecondaryColor}`}
           >
-            Hi, I'm Yusuf! I’m a frontend developer currently studying at
+            Hi, I&apos;m Yusuf! I’m a frontend developer currently studying at
             Aalborg University. I am passionate about creating innovative
             software solutions that enhance user experiences. If my profile
             interests you, please feel free to{" "}
             <a
-              href="mailto:yusuia0154@gmail.com"
-              className={`text-blue-500 underline`}
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-blue-500 underline"
             >
               contact
             </a>{" "}
@@ -121,31 +142,17 @@ function Home() {
           <ul
             className={`list-none text-lg md:text-base lg:text-lg ${textSecondaryColor}`}
           >
-            <li className="mb-2">
-              <h3
-                className={`text-xl font-semibold md:text-lg lg:text-xl ${textColor}`}
-              >
-                Master in Interaction Design
-              </h3>
-              <p>Aalborg University - 2024 to present</p>
-              <p>
-                In this program, I am gaining expertise in interactive
-                technology with an emphasis on user-centered design.
-              </p>
-            </li>
-            <li className="mb-2">
-              <h3
-                className={`text-xl font-semibold md:text-lg lg:text-xl ${textColor}`}
-              >
-                Bachelor in Information Technology
-              </h3>
-              <p>Aalborg University - 2020 to 2023</p>
-              <p>
-                Designed and developed various systems, focusing on usability
-                and user experience. During my bachelor’s program, I specialized
-                in the technical direction, focusing on software development.
-              </p>
-            </li>
+            {EDUCATION.map((entry) => (
+              <li className="mb-2" key={entry.title}>
+                <h3
+                  className={`text-xl font-semibold md:text-lg lg:text-xl ${textColor}`}
+                >
+                  {entry.title}
+                </h3>
+                <p>{entry.period}</p>
+                <p>{entry.description}</p>
+              </li>
+            ))}
           </ul>
         </animated.div>
         <animated.div
@@ -169,33 +176,11 @@ function Home() {
           <ul
             className={`list-none text-lg md:text-base lg:text-lg ${textSecondaryColor}`}
           >
-            <li className="mb-2 flex items-center">
-              <FaJs className="mr-2 text-yellow-500" /> JavaScript
-            </li>
-            <li className="mb-2 flex items-center">
-              <FaReact className="mr-2 text-blue-500" /> React
-            </li>
-            <li className="mb-2 flex items-center">
-              <FaHtml5 className="mr-2 text-orange-500" /> HTML
-            </li>
-            <li className="mb-2 flex items-center">
-              <FaCss3Alt className="mr-2 text-blue-600" /> CSS
-            </li>
-            <li className="mb-2 flex items-center">
-              <SiTailwindcss className="mr-2 text-teal-500" /> TailwindCSS
-            </li>
-            <li className="mb-2 flex items-center">
-              <FaBootstrap className="mr-2 text-purple-600" /> Bootstrap
-            </li>
-            <li className="mb-2 flex items-center">
-              <FaGit className="mr-2 text-red-500" /> Git
-            </li>
-            <li className="mb-2 flex items-center">
-              <FaGithub className="mr-2 text-gray-500" /> GitHub
-            </li>
-            <li className="mb-2 flex items-center">
-              <FaFigma className="mr-2 text-pink-500" /> Figma
-            </li>
+            {TECHNOLOGIES.map(({ Icon, color, label }) => (
+              <li className="mb-2 flex items-center" key={label}>
+                <Icon className={`mr-2 ${color}`} /> {label}
+              </li>
+            ))}
           </ul>
         </animated.div>
       </div>

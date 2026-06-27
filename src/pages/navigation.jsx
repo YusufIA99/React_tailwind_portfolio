@@ -39,6 +39,7 @@ function Navigation() {
         <button
           id="theme-toggle"
           onClick={toggleTheme}
+          aria-label={isDarkGradient ? "Switch to light theme" : "Switch to dark theme"}
           className="transform rounded-full bg-blue-500 p-2 text-white shadow-md transition-transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           {isDarkGradient ? (

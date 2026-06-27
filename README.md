@@ -5,6 +5,22 @@ Welcome to my portfolio page! This project showcases my work and skills using mo
 
 Check out the live demo of the portfolio [here](https://yusufissa.com).
 
+## Development
+
+### Install dependencies
+
+```bash
+npm ci
+```
+
+### Run checks
+
+```bash
+npm run lint
+npm run test
+npm run build
+```
+
 
 # React + Vite
 

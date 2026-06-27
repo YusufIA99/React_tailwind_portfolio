@@ -113,9 +113,9 @@ ProjectCard.propTypes = {
 function Projects() {
   return (
     <div className="flex min-h-screen w-full flex-col items-center">
-      <header className="my-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
+      <h1 className="my-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
         See My Work
-      </header>
+      </h1>
       <div className="grid w-full max-w-screen-lg grid-cols-1 gap-6 p-6 md:grid-cols-2 md:gap-8 md:p-8">
         {projects.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />

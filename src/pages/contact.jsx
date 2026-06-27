@@ -56,9 +56,9 @@ function Contact() {
       transition={{ duration: 0.5, delay: 0.2 }}
       className="flex min-h-screen w-full flex-col items-center"
     >
-      <header className="my-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
+      <h1 className="my-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
         Contact Me
-      </header>
+      </h1>
       <div className="w-full max-w-screen-sm rounded-lg bg-neutral-800 p-6 shadow-lg md:max-w-screen-md md:p-8">
         <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
           <div>

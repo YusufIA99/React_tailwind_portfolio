@@ -28,6 +28,7 @@ describe('Contact page', () => {
     const alertSpy = vi.spyOn(window, 'alert').mockImplementation(() => {});
     renderWithProviders(<Contact />);
 
+    expect(screen.getByRole('heading', { name: /contact me/i })).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: /send/i }));
 
     expect(alertSpy).toHaveBeenCalledWith('All fields are required.');

@@ -1,13 +1,6 @@
-import React, { useMemo } from "react";
-import IOT from "../assets/IOT.png";
-import Lift from "../assets/LIFT.svg";
-import Travel from "../assets/travel.png";
-import Himmerland from "../assets/Himmerland.png";
-import Fraizer from "../assets/fraizer.png";
-import Portfolio from "../assets/Portfolio.pdf";
-import ExploreAalborg from "../assets/ExploreAalborg.png";
-import Progress from "../assets/progress.png";
-import Siid from "../assets/SIID.png";
+import React from "react";
+import PropTypes from "prop-types";
+import { projects } from "../data/projects";
 import {
   FaReact,
   FaJs,
@@ -31,6 +24,7 @@ import {
   SiOpenai,
 } from "react-icons/si";
 import { useSpring, animated } from "@react-spring/web";
+import { SPRING_CONFIG } from "../utils/animation.js";
 
 const iconStyle = "text-xl md:text-lg lg:text-2xl";
 
@@ -46,7 +40,7 @@ const IconComponents = {
   JavaIcon: () => <FaJava className={`${iconStyle} text-red-500`} />,
   FirebaseIcon: () => <SiFirebase className={`${iconStyle} text-yellow-500`} />,
   BootstrapIcon: () => <FaBootstrap className={`${iconStyle} text-purple-500`} />,
-  PythonIcon: () => <FaPython className={iconStyle} style={{ color: "#3776AB" }} />,
+  PythonIcon: () => <FaPython className={`${iconStyle} text-[#3776AB]`} />,
   FlaskIcon: () => <SiFlask className={`${iconStyle} text-white`} />,
   JsIcon: () => <FaJs className={`${iconStyle} text-yellow-500`} />,
   TailwindIcon: () => <SiTailwindcss className={`${iconStyle} text-teal-500`} />,
@@ -59,8 +53,8 @@ const ProjectCard = React.memo(({ project, index }) => {
   const fadeInProps = useSpring({
     from: { opacity: 0, transform: "translateY(20px)" },
     to: { opacity: 1, transform: "translateY(0)" },
-    config: { tension: 170, friction: 40 },
-    delay: 200 + index * 100, 
+    config: SPRING_CONFIG,
+    delay: 200 + index * 100,
   });
 
   return (
@@ -88,9 +82,10 @@ const ProjectCard = React.memo(({ project, index }) => {
           {project.description}
         </p>
         <div className="mt-4 flex justify-center space-x-2 md:space-x-4">
-          {project.icons.map((IconComponent, idx) => (
-            <IconComponent key={idx} />
-          ))}
+          {project.icons.map((iconName) => {
+            const IconComponent = IconComponents[iconName];
+            return <IconComponent key={iconName} />;
+          })}
         </div>
         <a
           href={project.link}
@@ -108,95 +103,18 @@ const ProjectCard = React.memo(({ project, index }) => {
 
 ProjectCard.displayName = 'ProjectCard';
 
-function Projects() {
-  const projects = useMemo(() => [
-    {
-      id: 0,
-      image: Lift,
-      title: "LIFT - IXD10",
-      description:
-        "LIFT (Listening & Inclusion Facilitation Tool) is a voice-based AI system that supports Problem-Based Learning groups. It transcribes group discussions in real time, provides spoken AI facilitation with reflective prompts, and visualises participation patterns to help amplify quieter voices.",
-      link: "https://github.com/YusufIA99/LIFT-IXD10",
-      icons: [
-        IconComponents.ReactIcon,
-        IconComponents.NodeIcon,
-        IconComponents.OpenAiIcon,
-        IconComponents.JsIcon,
-      ],
-    },
-    {
-      id: 1,
-      image: Siid,
-      title: "IXD 8 Project",
-      description:
-        "This application is developed as a research project with three distinct tasks. Built using React Native, TypeScript, Expo, and CSS, it aims to study how the Situationally-Induced Impairments and Disabilities (SIID) pain affect mobile interaction.",
-      link: "https://github.com/leongroth/PainPhones",
-      icons: [
-        IconComponents.ReactIcon,
-        IconComponents.TypeScriptIcon,
-        IconComponents.ExpoIcon,
-        IconComponents.CssIcon,
-      ],
-    },
-    {
-      id: 2,
-      image: ExploreAalborg,
-      title: "IXD 7 Projects",
-      description:
-        "This project contains a downloadable presentation of 2 mini-projects and 1 bigger project I was part of during my 7th semester in Interaction Design.",
-      link: Portfolio,
-      icons: [IconComponents.UnityIcon, IconComponents.FigmaIcon],
-    },
-    {
-      id: 3,
-      image: Fraizer,
-      title: "Fraizer Webshop",
-      description:
-        "Fraizer is a Danish fashion brand founded in 2023, focused on high-quality, affordable fashion with a timeless Scandinavian style. I worked on the webshop, implementing custom features and designs using Shopify and CSS.",
-      link: "https://fraizer.dk",
-      icons: [
-        IconComponents.ShopifyIcon,
-        IconComponents.CssIcon,
-        IconComponents.HtmlIcon,
-      ],
-    },
-    {
-      id: 4,
-      image: Himmerland,
-      title: "Himmerland Boligforegning Community App",
-      description:
-        "This project is a community app developed using Java and Firebase.",
-      link: "https://github.com/YusufIA99/Himmerland-app/tree/main",
-      icons: [IconComponents.JavaIcon, IconComponents.FirebaseIcon],
-    },
-    {
-      id: 5,
-      image: IOT,
-      title: "IOT Project",
-      description:
-        "This project is focused on Internet of Things (IoT) technology.",
-      link: "https://github.com/YusufIA99/Smart-Curtain-IoT",
-      icons: [
-        IconComponents.ReactIcon,
-        IconComponents.BootstrapIcon,
-        IconComponents.PythonIcon,
-        IconComponents.FlaskIcon,
-      ],
-    },
-    {
-      id: 6,
-      image: Travel,
-      title: "Travel React Project",
-      description: "This is a travel app made using React and Tailwind CSS.",
-      link: "https://yusufia99.github.io/travel-tailwind-vite/",
-      icons: [
-        IconComponents.ReactIcon,
-        IconComponents.JsIcon,
-        IconComponents.TailwindIcon,
-      ],
-    },
-  ], []);
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    image: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    icons: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
 
+function Projects() {
   return (
     <div className="flex min-h-screen w-full flex-col items-center">
       <header className="my-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">

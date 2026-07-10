@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
 import './index.css';
 import Navigation from './pages/navigation.jsx';
 import Home from './pages/home.jsx';
@@ -17,7 +16,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/app" element={<App />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </HashRouter>

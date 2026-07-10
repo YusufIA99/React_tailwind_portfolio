@@ -4,6 +4,14 @@ import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import emailjs from "emailjs-com";
 
+/**
+ * Contact component
+ * 
+ * This component allows users to send a message to the website owner.
+ * It uses EmailJS to send an email with the message and saves the message to Firestore.
+ * 
+ * @returns {JSX.Element} The Contact component
+ */
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -21,37 +29,24 @@ function Contact() {
     setLoader(true);
 
     try {
-      // Save to Firestore
-      await addDoc(collection(db, "contacts"), {
-        name: name,
-        email: email,
-        message: message,
-      });
-
-      // Send email using EmailJS
-      const templateParams = {
-        name: name,
-        email: email,
-        message: message,
-      };
+      await addDoc(collection(db, "contacts"), { name, email, message });
 
       await emailjs.send(
-        "service_nqq3mwo",
-        "template_yo9n685",
-        templateParams,
-        "DMfqNbl0llDnCuwyQ"
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        { name, email, message },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      setLoader(false);
       alert("Your message has been submitted and email sent 👍");
+      setName("");
+      setEmail("");
+      setMessage("");
     } catch (error) {
-      setLoader(false);
       alert(error.message);
+    } finally {
+      setLoader(false);
     }
-
-    setName("");
-    setEmail("");
-    setMessage("");
   };
 
   return (

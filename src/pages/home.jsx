@@ -12,7 +12,7 @@ import {
   FaBootstrap,
   FaFigma,
 } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
+import { SiTailwindcss, SiTypescript } from "react-icons/si";
 import { useSpring, animated } from "@react-spring/web";
 import { useTheme } from "./themecontext.jsx";
 
@@ -63,7 +63,7 @@ function Home() {
           <p
             className={`mt-2 text-lg md:text-base lg:text-lg ${textSecondaryColor}`}
           >
-            Hi, I'm Yusuf! I’m a frontend developer currently studying at
+            Hi, I'm Yusuf! I’m a frontend developer and a graduate of
             Aalborg University. I am passionate about creating innovative
             software solutions that enhance user experiences. If my profile
             interests you, please feel free to{" "}
@@ -127,10 +127,15 @@ function Home() {
               >
                 Master in Interaction Design
               </h3>
-              <p>Aalborg University - 2024 to present</p>
+              <p>Aalborg University - 2024 to 2026</p>
               <p>
-                In this program, I am gaining expertise in interactive
-                technology with an emphasis on user-centered design.
+                In my master's degree, I specialised in system development
+                within interactive technology, with an emphasis on
+                user-centered design. For my thesis, I explored how AI can be
+                applied in education to enhance collaboration. I designed
+                LIFT, a voice-based AI facilitator that listens to group
+                discussions and encourages balanced participation, so more
+                voices are activated and more knowledge gets shared.
               </p>
             </li>
             <li className="mb-2">
@@ -141,9 +146,12 @@ function Home() {
               </h3>
               <p>Aalborg University - 2020 to 2023</p>
               <p>
-                Designed and developed various systems, focusing on usability
-                and user experience. During my bachelor’s program, I specialized
-                in the technical direction, focusing on software development.
+                An interdisciplinary program combining technology, people,
+                and business. I gained hands-on experience with software
+                development, usability evaluation, and mobile applications
+                through team-based projects with real companies. I
+                specialised in the technical track, focusing on software
+                development and agile methods.
               </p>
             </li>
           </ul>
@@ -153,7 +161,7 @@ function Home() {
           className={`col-span-1 row-span-1 flex w-full flex-col items-center justify-center rounded-lg ${accentColor} p-4 md:col-start-1 md:row-start-3`}
         >
           <h1 className="text-center text-3xl font-bold leading-none text-white md:text-2xl lg:text-3xl">
-            Student<br />
+            Graduate<br />
            @Aalborg University
           </h1>
         </animated.div>
@@ -171,6 +179,9 @@ function Home() {
           >
             <li className="mb-2 flex items-center">
               <FaJs className="mr-2 text-yellow-500" /> JavaScript
+            </li>
+            <li className="mb-2 flex items-center">
+              <SiTypescript className="mr-2 text-blue-500" /> TypeScript
             </li>
             <li className="mb-2 flex items-center">
               <FaReact className="mr-2 text-blue-500" /> React

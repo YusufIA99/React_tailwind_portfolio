@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import IOT from "../assets/IOT.png";
+import Lift from "../assets/LIFT.svg";
 import Travel from "../assets/travel.png";
 import Himmerland from "../assets/Himmerland.png";
 import Fraizer from "../assets/fraizer.png";
@@ -17,6 +18,7 @@ import {
   FaCss3Alt,
   FaHtml5,
   FaUnity,
+  FaNodeJs,
 } from "react-icons/fa";
 import {
   SiFlask,
@@ -26,6 +28,7 @@ import {
   SiFigma,
   SiTypescript,
   SiExpo,
+  SiOpenai,
 } from "react-icons/si";
 import { useSpring, animated } from "@react-spring/web";
 
@@ -47,6 +50,8 @@ const IconComponents = {
   FlaskIcon: () => <SiFlask className={`${iconStyle} text-white`} />,
   JsIcon: () => <FaJs className={`${iconStyle} text-yellow-500`} />,
   TailwindIcon: () => <SiTailwindcss className={`${iconStyle} text-teal-500`} />,
+  NodeIcon: () => <FaNodeJs className={`${iconStyle} text-green-600`} />,
+  OpenAiIcon: () => <SiOpenai className={`${iconStyle} text-white`} />,
 };
 
 
@@ -105,6 +110,20 @@ ProjectCard.displayName = 'ProjectCard';
 
 function Projects() {
   const projects = useMemo(() => [
+    {
+      id: 0,
+      image: Lift,
+      title: "LIFT - IXD10",
+      description:
+        "LIFT (Listening & Inclusion Facilitation Tool) is a voice-based AI system that supports Problem-Based Learning groups. It transcribes group discussions in real time, provides spoken AI facilitation with reflective prompts, and visualises participation patterns to help amplify quieter voices.",
+      link: "https://github.com/YusufIA99/LIFT-IXD10",
+      icons: [
+        IconComponents.ReactIcon,
+        IconComponents.NodeIcon,
+        IconComponents.OpenAiIcon,
+        IconComponents.JsIcon,
+      ],
+    },
     {
       id: 1,
       image: Siid,

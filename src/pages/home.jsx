@@ -85,10 +85,13 @@ function Home() {
           <p
             className={`mt-2 text-lg md:text-base lg:text-lg ${textSecondaryColor}`}
           >
-            Hi, I&apos;m Yusuf! I’m a frontend developer and a graduate of
-            Aalborg University. I am passionate about creating innovative
-            software solutions that enhance user experiences. If my profile
-            interests you, please feel free to{" "}
+          Hi, I&apos;m Yusuf! I&apos;m an IT professional with an MSc in
+  Interaction Design and a BSc in Information Technology from Aalborg
+  University. I have hands-on experience with software development,
+  troubleshooting, and digital solutions. I enjoy solving
+  technical problems, understanding how systems work, and creating
+  solutions that work well for the people using them. If my profile
+  interests you, please feel free to{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
               className="text-blue-500 underline"
